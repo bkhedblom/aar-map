@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TileComponent } from './tile.component';
+import { Tile } from 'src/app/classes/tile';
 
 describe('TileComponent', () => {
   let component: TileComponent;
@@ -13,6 +14,7 @@ describe('TileComponent', () => {
     fixture = TestBed.createComponent(TileComponent);
     component = fixture.componentInstance;
     compiledHtml = fixture.debugElement.nativeElement;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -21,7 +23,7 @@ describe('TileComponent', () => {
 
   it('renders tile text in a p tag', () => {
     const text = "This is a test tile";
-    component.tileText = text;
+    component.tile.text = text;
     fixture.detectChanges();
     expect(compiledHtml.querySelector('p').textContent).toContain(text);
   })
@@ -49,5 +51,12 @@ describe('TileComponent', () => {
     fixture.detectChanges();
     compiledHtml.querySelector('div.tile').dispatchEvent(new Event("click"));
     expect(component.tilefaceDown).toBeFalsy();
+  })
+
+  it('should use data from input Tile', () => {
+    const input = new Tile("test tile");
+    component.tile = input;
+    expect(component.tilefaceDown).toEqual(!input.isFaceUp);
+    expect(component.tileText).toEqual(input.text);
   })
 });
