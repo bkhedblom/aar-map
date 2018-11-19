@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Tile } from 'src/app/classes/tile';
 
 @Component({
-  selector: 'app-tile',
+  selector: 'aar-tile',
   templateUrl: './tile.component.html',
   styleUrls: ['./tile.component.css']
 })
