@@ -1,8 +1,11 @@
+:host{
+    vertical-align: top;
+}
 .tile {
-    width:150px;
-    height: 150px;
     text-align: center;
     border: 3px burlywood;
+    height: 100%;
+    width: 100%;
 }
 .tile.face-up {
     background:rgb(240, 211, 171);

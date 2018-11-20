@@ -1,5 +1,5 @@
 <div class="tile" [class.face-down]="tilefaceDown" [class.face-up]="!tilefaceDown" (click)="switchFace()">
-  <p *ngIf="!tilefaceDown">
-    {{tileText!}}
+  <p>
+    {{textToDisplay}}
   </p>
 </div>
