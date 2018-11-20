@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Tile } from 'src/app/classes/tile';
+import { Tile } from 'src/app/tile/tile.model';
 
 @Component({
   selector: 'aar-tile',
