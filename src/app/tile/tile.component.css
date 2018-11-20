@@ -1,0 +1,14 @@
+.tile {
+    width:150px;
+    height: 150px;
+    text-align: center;
+    border: 3px burlywood;
+}
+.tile.face-up {
+    background:rgb(240, 211, 171);
+    border-style: inset;
+}
+.tile.face-down {
+    background: burlywood;
+    border-style: outset;
+}

@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TileComponent } from './tile/tile.component';
+import { MainViewComponent } from './main-view/main-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TileComponent
+    TileComponent,
+    MainViewComponent
   ],
   imports: [
     BrowserModule
