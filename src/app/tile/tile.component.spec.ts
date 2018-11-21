@@ -21,17 +21,29 @@ describe('TileComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('renders tile text in a p tag', () => {
-    const text = "This is a test tile";
-    component.tile.text = text;
+  it('should render textToDisplay in a p tag', () => {
+    component.tile = new Tile("some text");
     fixture.detectChanges();
-    expect(compiledHtml.querySelector('p').textContent).toContain(text);
+    expect(compiledHtml.querySelector('p').textContent).toContain(component.textToDisplay, `faceUp: ${component.tile.isFaceUp}`);
+    component.switchFace();
+    fixture.detectChanges();
+    expect(compiledHtml.querySelector('p').textContent).toContain(component.textToDisplay, `faceUp: ${component.tile.isFaceUp}`);
   })
 
-  it("should not show text if face down", () => {
-    component.tilefaceDown = true;
+  it('should display the tile text if tile is face up', () => {
+    const input = new Tile("This is a test tile");
+    input.isFaceUp = true;
+    component.tile = input;
     fixture.detectChanges();
-    expect(compiledHtml.querySelector('p')).toBeFalsy();
+    expect(component.textToDisplay).toEqual(input.text);
+  })
+
+  it("should not display text if tile is face down", () => {
+    const input = new Tile("This is a test tile");
+    input.isFaceUp = false;
+    component.tile = input;
+    fixture.detectChanges();
+    expect(component.textToDisplay).toEqual("");
   })
 
   it('should give tile div class face-down if face down', () => {
@@ -51,12 +63,5 @@ describe('TileComponent', () => {
     fixture.detectChanges();
     compiledHtml.querySelector('div.tile').dispatchEvent(new Event("click"));
     expect(component.tilefaceDown).toBeFalsy();
-  })
-
-  it('should use data from input Tile', () => {
-    const input = new Tile("test tile");
-    component.tile = input;
-    expect(component.tilefaceDown).toEqual(!input.isFaceUp);
-    expect(component.tileText).toEqual(input.text);
   })
 });

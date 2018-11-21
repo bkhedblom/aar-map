@@ -8,8 +8,8 @@ import { Tile } from 'src/app/tile/tile.model';
 })
 export class TileComponent implements OnInit {
   @Input() tile:Tile;
-  get tileText():string{
-    return this.tile.text;
+  get textToDisplay():string{
+    return this.tile.isFaceUp ? this.tile.text : "";
   }
   get tilefaceDown(): boolean{
     return !this.tile.isFaceUp
