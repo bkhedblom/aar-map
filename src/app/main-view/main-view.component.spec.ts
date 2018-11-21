@@ -6,11 +6,11 @@ import { Tile } from '../tile/tile.model';
 
 describe('MainViewComponent', () => {
 @Component({
-  selector: 'aar-tile-row',
+  selector: 'aar-grid',
   template: ''
 })
-class TileRowComponentStub{
-  @Input() tiles:Tile[];
+class GridComponentStub{
+  @Input() rows:Tile[][];
 }
 
   let component: MainViewComponent;
@@ -20,7 +20,7 @@ class TileRowComponentStub{
     TestBed.configureTestingModule({
       declarations: [ 
         MainViewComponent, 
-        TileRowComponentStub 
+        GridComponentStub 
       ]
     })
     fixture = TestBed.createComponent(MainViewComponent);
