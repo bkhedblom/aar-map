@@ -1,4 +1,4 @@
-<div class="tile" [class.face-down]="tilefaceDown" [class.face-up]="!tilefaceDown" (click)="switchFace()">
+<div class="tile" [class.face-down]="isFaceDown" [class.face-up]="isFaceUp" (click)="switchFace()">
   <p>
     {{textToDisplay}}
   </p>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Tile } from 'src/app/tile/tile.model';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'aar-tile',
@@ -11,23 +12,22 @@ export class TileComponent implements OnInit {
   get textToDisplay():string{
     return this.tile.isFaceUp ? this.tile.text : "";
   }
-  get tilefaceDown(): boolean{
-    return !this.tile.isFaceUp
+
+  get isFaceUp(){
+    return this.tile.isFaceUp;
   }
-  set tilefaceDown(value){
-    this.tile.isFaceUp = !value;
+
+  get isFaceDown(){
+    return !this.tile.isFaceUp;
   }
+
   constructor() { }
 
   ngOnInit() {
-    if(!this.tile){
-      this.tile = new Tile("Empty tile");
-      this.tile.isFaceUp = true;
-    }
   }
 
   switchFace(){
-    this.tilefaceDown = !this.tilefaceDown;
+    this.tile.isFaceUp = !this.tile.isFaceUp;
   }
 
 }

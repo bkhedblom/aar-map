@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { TileComponent } from './tile/tile.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { TileRowComponent } from './tile-row/tile-row.component';
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TileComponent,
     MainViewComponent,
-    TileRowComponent
+    TileRowComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule
