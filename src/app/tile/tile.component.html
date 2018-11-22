@@ -1,4 +1,5 @@
 <div class="tile" [class.face-down]="isFaceDown" [class.face-up]="isFaceUp" (click)="switchFace()">
+  <aar-tile-back *ngIf="isFaceDown" [imageName]="imageName"></aar-tile-back>  
   <p>
     {{textToDisplay}}
   </p>

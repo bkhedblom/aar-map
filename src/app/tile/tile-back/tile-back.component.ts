@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'aar-tile-back',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TileBackComponent implements OnInit {
 
+  @Input() imageName: string;
+  url: string;
   constructor() { }
 
   ngOnInit() {
+    this.url = "\\assets\\tile-images\\" + this.imageName;
   }
 
 }

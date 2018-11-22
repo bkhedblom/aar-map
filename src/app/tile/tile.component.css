@@ -2,8 +2,8 @@
     vertical-align: top;
 }
 .tile {
+    overflow:hidden; /* paragraph extends out of parent element without this, when images are used on the tile*/
     text-align: center;
-    border: 3px burlywood;
     height: 100%;
     width: 100%;
 }
@@ -12,6 +12,5 @@
     border-style: inset;
 }
 .tile.face-down {
-    background: burlywood;
-    border-style: outset;
+    background: burlywood;    
 }

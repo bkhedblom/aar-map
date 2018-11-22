@@ -8,16 +8,19 @@ import { TouchSequence } from 'selenium-webdriver';
   styleUrls: ['./tile.component.css']
 })
 export class TileComponent implements OnInit {
-  @Input() tile:Tile;
-  get textToDisplay():string{
+  @Input() tile: Tile;
+
+  imageName: string = "background.png";
+
+  get textToDisplay(): string {
     return this.tile.isFaceUp ? this.tile.text : "";
   }
 
-  get isFaceUp(){
+  get isFaceUp() {
     return this.tile.isFaceUp;
   }
 
-  get isFaceDown(){
+  get isFaceDown() {
     return !this.tile.isFaceUp;
   }
 
@@ -26,7 +29,7 @@ export class TileComponent implements OnInit {
   ngOnInit() {
   }
 
-  switchFace(){
+  switchFace() {
     this.tile.isFaceUp = !this.tile.isFaceUp;
   }
 
