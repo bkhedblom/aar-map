@@ -6,6 +6,17 @@
     border: 3px burlywood;
     height: 100%;
     width: 100%;
+    position:relative;
+}
+
+.tile:hover {
+    height:120%;
+    width:120%;
+    top:-10%;
+    left:-10%;
+    border: 3px rgb(177, 147, 109);
+    z-index:100;
+    zoom:1.2;
 }
 .tile.face-up {
     background:rgb(240, 211, 171);
