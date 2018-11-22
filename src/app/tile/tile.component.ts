@@ -10,7 +10,7 @@ import { TouchSequence } from 'selenium-webdriver';
 export class TileComponent implements OnInit {
   @Input() tile: Tile;
 
-  imageName: string = "background.png";
+  imageName: string = "background.png"; // TODO: Kanske sätta det här på något annat vis..?
 
   get textToDisplay(): string {
     return this.tile.isFaceUp ? this.tile.text : "";
