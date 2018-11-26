@@ -35,7 +35,7 @@ describe('GridComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should renderinput:ed rows (in order)', () => {
+  it('should render input:ed rows (in order)', () => {
     const firstRow = [new Tile("row 0 tile 0"), new Tile("row 0 tile 1")];
     const secondRow = [new Tile("row 1 tile 0"), new Tile("row 1 tile 1")];
     component.rows =  [
