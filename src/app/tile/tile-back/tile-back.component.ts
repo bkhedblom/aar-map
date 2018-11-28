@@ -12,7 +12,7 @@ export class TileBackComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.url = "\\assets\\tile-images\\" + this.imageName;
+    this.url = `\\assets\\tile-images\\${this.imageName}`;
   }
 
 }
